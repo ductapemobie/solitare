@@ -40,3 +40,8 @@ export function numToCard(val: number): Card {
     value: val % 13 + 1,
   }
 }
+
+export function cardToHref(card: Card): string {
+  const suitChar = card.suit[0].toUpperCase()
+  return `src/assets/${card.suit}/${card.value}${suitChar}.png`
+}

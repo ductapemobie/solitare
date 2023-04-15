@@ -1,4 +1,8 @@
-<script>
+<template>
+  <SolitareBoard />
+</template>
+
+<script lang="ts">
 
 import SolitareBoard from './components/solitare-board.vue';
 
@@ -13,9 +17,6 @@ export default {
 
 </script>
 
-<template>
-  <SolitareBoard />
-</template>
 
 <style scoped>
 

@@ -7,6 +7,7 @@
     v-for="(card, index) in cards"
     :height="height"
     :width="width"
+    :card="card"
     class="card"
     :style="{
       top: (index * 20) + 'px'

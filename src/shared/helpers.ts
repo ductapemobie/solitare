@@ -41,7 +41,7 @@ export function numToCard(val: number): Card {
   }
 }
 
-export function cardToHref(card: Card): string {
-  const suitChar = card.suit[0].toUpperCase()
-  return `src/assets/${card.suit}/${card.value}${suitChar}.png`
-}
+// export function cardToHref(card: Card): string {
+//   const suitChar = card.suit[0].toUpperCase()
+//   return new URL(`/img/${card.suit}/${card.value}${suitChar}.png`, import.meta.url).href
+// }

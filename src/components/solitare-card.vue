@@ -1,13 +1,15 @@
 <template>
-  <img :src="cardToHref(card)" :style="{
-    width: width + 'px',
-    height: height + 'px',
-  }">
+  <img 
+    src="/img/diamonds/13D.png" 
+    :style="{
+      width: width + 'px',
+      height: height + 'px',
+    }"
+  >
 </template>
 
 <script lang="ts">
 
-import { cardToHref } from '@/shared/helpers'
 
 export default {
   props:{
@@ -23,7 +25,6 @@ export default {
     };
   },
   methods: {
-    cardToHref
   }
 }
 </script>

@@ -20,17 +20,13 @@ export default {
       required: true,
     }
   },
-  setup(){
+  setup(props){
+    const filename = String(props.card.value) + props.card.suit[0].toUpperCase()
+    const imgSrc = `/img/${props.card.suit}/${filename}.png`
     return {
-
+      imgSrc
     };
   },
-  computed: {
-    imgSrc(): string {
-      const filename = String(this.card.value) + this.card.suit[0].toUpperCase()
-      return `/img/${this.card.suit}/${filename}.png`
-    }
-  }
 }
 </script>
 

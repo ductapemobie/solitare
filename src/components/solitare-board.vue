@@ -14,7 +14,14 @@
     </div>
     <div id="row-two">
       <!-- main board area -->
-      <tableau-stack v-for="tab in tabState" :cards="tab" :width="100" :height="125" />
+      <!-- todo fix the reactivity stuff -->
+      <tableau-stack 
+        v-for="(tab, index) in store.tableau"
+        :cards="tab"
+        :width="100"
+        :height="125"
+        :key="state.count + String(index)"
+      />
     </div>
   </div>
   <div>
@@ -38,18 +45,15 @@ export default {
     const store = useStore();
     store.initGame();
 
-    const tabState: Card[][] = store.tableau;
-
     function increment(){
       state.count++;
       store.initGame();
-      console.log(store.$state);
     }
 
     return {
       state,
       increment,
-      tabState,
+      store,
     };
   }
 };

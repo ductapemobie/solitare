@@ -30,19 +30,18 @@ export const useStore = defineStore('main', {
   actions: {
     initGame() {
       const newTableau: Card[][] = [];
-      const newStack: Card[] = [];
       
       const shuffledCards = shuffleDeck();
       for (let i = 0; i < 7; i ++) {
         newTableau.push(shuffledCards.splice(0, i + 1))
       }
-      newStack.splice(0, 0, ...shuffledCards);
+      const newStack = shuffledCards;
 
       // this is scuffed but it works so whatever
-      this.tableau.splice(0, this.stack.length, ...newTableau);
-      this.stack.splice(0, this.stack.length, ...newStack);
-      this.foundations.splice(0, this.foundations.length);
-      this.talon.splice(0, this.talon.length);
+      this.tableau = newTableau;
+      this.stack= newStack;
+      this.foundations = [];
+      this.talon = [];
     }
   }
 })

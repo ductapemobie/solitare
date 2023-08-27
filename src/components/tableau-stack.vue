@@ -19,20 +19,20 @@
 <script lang="ts">
 
 import SolitareCard from '@/components/solitare-card.vue'
+import type { Card } from '@/shared/types';
 
 export default {
   props: {
-    cards: Array,
+    cards: {
+      type: Array as () => Card[],
+      required: true,
+    },
     width: Number,
     height: Number,
   },
   components:{
     SolitareCard,
   },
-  setup(props: any){
-    console.log(props.cards);
-    
-  }
 }
 
 </script>

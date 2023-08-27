@@ -1,18 +1,18 @@
 <template>
-  <img 
+  <!-- <img 
     :src="imgSrc" 
     :style="{
       width: width + 'px',
       height: height + 'px',
     }"
-  >
+  > -->
+  <div>hello</div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
 import type { Card } from '@/shared/types'
 
-export default defineComponent({
+export default {
   props:{
     width: Number, 
     height: Number,
@@ -21,13 +21,7 @@ export default defineComponent({
       required: true,
     }
   },
-  computed: {
-    imgSrc(): string {
-      const filename = String(this.card.value) + this.card.suit[0].toUpperCase()
-      return `https://raw.githubusercontent.com/ductapemobie/card-assets/main/${this.card.suit}/${filename}.png`
-    }
-  }
-})
+}
 </script>
 
 <style scoped lang="scss">

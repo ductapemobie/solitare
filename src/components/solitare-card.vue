@@ -24,7 +24,7 @@ export default defineComponent({
   computed: {
     imgSrc(): string {
       const filename = String(this.card.value) + this.card.suit[0].toUpperCase()
-      return `/img/${this.card.suit}/${filename}.png`
+      return `https://raw.githubusercontent.com/ductapemobie/card-assets/main/${this.card.suit}/${filename}.png`
     }
   }
 })

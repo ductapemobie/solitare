@@ -9,9 +9,10 @@
 </template>
 
 <script lang="ts">
+import { defineComponent } from 'vue'
 import type { Card } from '@/shared/types'
 
-export default {
+export default defineComponent({
   props:{
     width: Number, 
     height: Number,
@@ -20,14 +21,13 @@ export default {
       required: true,
     }
   },
-  setup(props){
-    const filename = String(props.card.value) + props.card.suit[0].toUpperCase()
-    const imgSrc = `/img/${props.card.suit}/${filename}.png`
-    return {
-      imgSrc
-    };
-  },
-}
+  computed: {
+    imgSrc(): string {
+      const filename = String(this.card.value) + this.card.suit[0].toUpperCase()
+      return `/img/${this.card.suit}/${filename}.png`
+    }
+  }
+})
 </script>
 
 <style scoped lang="scss">
